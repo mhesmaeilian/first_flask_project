@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/app.css')}}">
+</head>
+<body>
+    <h1>welcome to my page</h1>
+    {% if Postid==1 %}
+        <h3>this content for post{{ Postid }}</h3>
+    {% else  %}
+        <h2 class=newclass> this post is not first<b> (post ID={{ Postid }}) </b></h2>
+    {% endif %}
+    <h4>
+      {{ Name }} {{ " is a %s programmer" | format('flask')}}
+    </h4>
+
+    <h5>
+        {{ text |  reversing}}
+    </h5>
+    <u1>
+        {% for course in Courses %}
+            <li> {{ course | upper}}</li>
+        {% endfor %}
+    </u1>
+    <script src="{{ url_for('static',filename='js/main.js')}}"></script>
+</body>
+</html>

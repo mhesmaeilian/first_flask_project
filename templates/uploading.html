@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2> Upload File</h2>
+<hr>
+{% with messages=get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category , message in messages %}
+            <span> {{ message }}</span>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<form action="{{ url_for('uploadfile') }}" enctype="multipart/form-data" method="post">
+    <p><input type="file" name="photo"></p>
+    <p> <button type="submit"> upload photo</button></p>
+</form>
+</body>
+</html>

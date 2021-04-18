@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>forms</title>
+</head>
+<body>
+<h1>Login forms </h1>
+<form action="/logforms" method="post" novalidate>
+        {{ form.csrf_token }}
+        <ul>
+            {% for field ,errors in form.errors.items() %}
+                <li><b style="color: red " >{{ ','.join(errors) }}</b></li>
+            {% endfor %}
+        </ul>
+    <p> {{ form.username (placeholder="enter username")}}</p>
+    <p> {{ form.password(placeholder='enter password')}}</p>
+    <p> {{ form.submit }}</p>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<div class="col-3">
+    <div class="card">
+        <div class="card-header"> Admin dashboard </div>
+        <div class="card-body text-center">
+            <img src="{{ url_for('static' , filename=current_user.avatar) }}" width="200" "height=200" alt=''>
+            <h3 class="text-center mt-2" class="font-italic" class="font-weight-bolder"> {{ current_user.name }}</h3>
+
+            <ul class="list-group">
+                 <li class="list-group-item"><a class="link" href="{{ url_for('admin_list_users') }}"> List users</a></li>
+                 <li class="list-group-item"><a class="link" href="{{ url_for('admin_add_users') }}">Add users </a></li>
+                 <li class="list-group-item"><a class="link" href="{{ url_for('admin_add_post') }}">Add post </a></li>
+                 <li class="list-group-item"><a class="link" href="{{ url_for('admin_list_posts') }}">list posts </a></li>
+                <li class="list-group-item"><a class="link" href="{{url_for('admin_info')}}">Info account </a></li>
+                <li class="list-group-item"><a class="link" href="{{ url_for('admin_edit') }}">Edit profile </a></li>
+                <li class="list-group-item"><a class="link" href="{{ url_for('admin_avatar') }}">avatar profile </a></li>
+                <li class="list-group-item"><a class="link" href="{{ url_for('admin_password') }}"> Change password</a></li>
+                <li class="list-group-item bg-danger"><a class="link text-white" href="{{ url_for('Signout') }}"> Sign out</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
