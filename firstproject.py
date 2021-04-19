@@ -34,7 +34,8 @@ myapp.config['UPLOAD_DIR'] = UPLOAD_DIR
 
 @myapp.route('/')
 def main():
-    return render_template('testingfile.html', phones={'type': 'apple', 'date_created': 2002, 'name': 'iphon12'})
+    get_all_articles=article.Articles.query.all()
+    return render_template('testingfile.html',articles=get_all_articles)
 
 
 @myapp.route('/logforms', methods=['POST', 'GET'])
@@ -388,8 +389,8 @@ def admin_delete_posts():
 @myapp.route('/Admin/list_post/edit_post',methods=['get','post'])
 def admin_edit_posts():
     form=Editpost()
-    articless=article.Articles.query.filter_by(id=request.args.get('id')).one()
-    if request.method=='post':
+    articless=db.session.query(article.Articles).filter_by(id=request.args.get('id')).one()
+    if request.method=='POST':
         if form.validate_on_submit():
             subject=request.form.get('subject')
             content=request.form.get('content')

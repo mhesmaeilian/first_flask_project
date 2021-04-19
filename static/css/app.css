@@ -3,3 +3,19 @@
     text-decoration: none;
     color: #333;
 }
+
+.Card {
+     border: 10px solid black;
+ }
+
+.border-dotted{
+ border-style: dotted;
+}
+
+.border-10{
+border-style:solid;
+ border-width: 10px;
+}
+.Border{
+    Border: solid red 2px;
+}
